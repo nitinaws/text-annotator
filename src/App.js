@@ -1,6 +1,7 @@
-import * as React from 'react'
+import React,{Component} from 'react'
 
 import { TokenAnnotator } from 'react-text-annotate'
+import {formControllerFactory} from "./FormController";
 
 const TEXT = `109277792 109277792 RWH 3477400 810976 7792902 01/30/2004 12:00:00 AM ED Discharge Summary Unsigned DIS ~~~ Report Status ~~~ Unsigned ED DISCHARGE NOTIFICATION / SUMMARY SHUFFSKOCKOTESKI, DRU ~~~ MRN ~~~ 3477400 ~~~ Age ~~~ 51y ~~~ REGISTRATION DATE ~~~ 01/30/2004 01:59 AM ~~~ Provider ~~~ KOMAND SILBEDOUETTLAND PRELIMINARY REPORT ~~~ PCP notified by MD ~~~ No - Other explanation ~~~ Benefits Assigned ~~~ N ~~~ Discharge Date / Time ~~~ 01/30/2004 08:28 ~~~ Discharge Status ~~~ Discharged ~~~ Condition on Discharge ~~~ Stable ~~~ Patient States Complaint ~~~ AGGRAVATED / NEEDS APS EVAL ~~~ Diagnosis ~~~ Impulsivity ~~~ 1`
 
@@ -22,16 +23,25 @@ const Card = ({children}) => (
   </div>
 )
 
-class App extends React.Component<any, any> {
-  state = {
-    //value: [{start: 17, end: 19, tag: 'PERSON'}],
-    //tag: 'PERSON',
-      value: [],
-      tag: 'CONDITION',
-  }
+class App extends Component{
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            //value: [{start: 17, end: 19, tag: 'PERSON'}],
+            //tag: 'PERSON',
+            formData: {},
+            value: [],
+            tag: 'CONDITION',
+        }
+    }
 
   handleChange = value => {
-    this.setState({value})
+    this.setState({value});
+    //document.getElementById("foo").value = JSON.stringify(this.state.value, null, 2);
+      document.getElementById("foo").value = "foobar";
+
   }
 
   handleTagChange = e => {
