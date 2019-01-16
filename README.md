@@ -1,7 +1,7 @@
 Steps taken to create this project:
 
 ```
-yarn create react-app text-annotator
+git clone <repo url>
 cd text-annotator
 yarn add react-text-annotate
 yarn start
