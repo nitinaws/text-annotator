@@ -27,7 +27,7 @@ class App extends React.Component<any, any> {
     //value: [{start: 17, end: 19, tag: 'PERSON'}],
     //tag: 'PERSON',
       value: [],
-      tag: '',
+      tag: 'CONDITION',
   }
 
   handleChange = value => {
@@ -41,8 +41,7 @@ class App extends React.Component<any, any> {
   render() {
     return (
       <div style={{padding: 24, fontFamily: 'IBM Plex Sans'}}>
-        <h3 style={{marginTop: 0}}>react-text-annotate</h3>
-        <p>A React component for interactively highlighting parts of text.</p>
+        <h3 style={{marginTop: 0}}>Text Annotation of Claims</h3>
         <div style={{display: 'flex', marginBottom: 24}}>
           <Card>
             <h4>Default</h4>
