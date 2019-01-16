@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { TokenAnnotator } from 'react-text-annotate'
 
-const TEXT = `On Monday night , Mr. Fallon will have a co-host for the first time : The rapper Cardi B , who just released her first album, " Invasion of Privacy . "`
+const TEXT = `109277792 109277792 RWH 3477400 810976 7792902 01/30/2004 12:00:00 AM ED Discharge Summary Unsigned DIS ~~~ Report Status ~~~ Unsigned ED DISCHARGE NOTIFICATION / SUMMARY SHUFFSKOCKOTESKI, DRU ~~~ MRN ~~~ 3477400 ~~~ Age ~~~ 51y ~~~ REGISTRATION DATE ~~~ 01/30/2004 01:59 AM ~~~ Provider ~~~ KOMAND SILBEDOUETTLAND PRELIMINARY REPORT ~~~ PCP notified by MD ~~~ No - Other explanation ~~~ Benefits Assigned ~~~ N ~~~ Discharge Date / Time ~~~ 01/30/2004 08:28 ~~~ Discharge Status ~~~ Discharged ~~~ Condition on Discharge ~~~ Stable ~~~ Patient States Complaint ~~~ AGGRAVATED / NEEDS APS EVAL ~~~ Diagnosis ~~~ Impulsivity ~~~ 1`
 
 const TAG_COLORS = {
   ORG: '#00ffa2',
@@ -24,8 +24,10 @@ const Card = ({children}) => (
 
 class App extends React.Component<any, any> {
   state = {
-    value: [{start: 17, end: 19, tag: 'PERSON'}],
-    tag: 'PERSON',
+    //value: [{start: 17, end: 19, tag: 'PERSON'}],
+    //tag: 'PERSON',
+      value: [],
+      tag: '',
   }
 
   handleChange = value => {
@@ -40,14 +42,13 @@ class App extends React.Component<any, any> {
     return (
       <div style={{padding: 24, fontFamily: 'IBM Plex Sans'}}>
         <h3 style={{marginTop: 0}}>react-text-annotate</h3>
-        <a href="https://github.com/mcamac/react-text-annotate">Github</a>
         <p>A React component for interactively highlighting parts of text.</p>
         <div style={{display: 'flex', marginBottom: 24}}>
           <Card>
             <h4>Default</h4>
             <select onChange={this.handleTagChange} value={this.state.tag}>
-              <option value="ORG">ORG</option>
-              <option value="PERSON">PERSON</option>
+              <option value="CONDITION">CONDITION</option>
+              <option value="DISCHARGE">DISCHARGE</option>
             </select>
             <TokenAnnotator
               style={{
@@ -68,8 +69,8 @@ class App extends React.Component<any, any> {
           <Card>
             <h4>Custom rendered mark</h4>
             <select onChange={this.handleTagChange} value={this.state.tag}>
-              <option value="ORG">ORG</option>
-              <option value="PERSON">PERSON</option>
+                <option value="CONDITION">CONDITION</option>
+                <option value="DISCHARGE">DISCHARGE</option>
             </select>
             <TokenAnnotator
               style={{
