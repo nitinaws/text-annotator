@@ -15,11 +15,11 @@ code {
 
 div.img_contain {
   overflow-y: auto;
-  width: 90%;
-  max-height: 60%;
+  width: 100%;
+  max-height: 100%;
   margin-left: 2%;
   margin-right: 2%;
-  margin-top: 10%;
+  margin-top: 5%;
   margin-bottom: 5%;
   border-width: 2px;
   border-color: black;
@@ -29,6 +29,7 @@ div.img_contain {
 
 img.page {
   max-width:100%;
+  max-length:100%;
 }
 
 div.controls {
